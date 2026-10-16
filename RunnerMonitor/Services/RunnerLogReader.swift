@@ -95,15 +95,15 @@ public final class RunnerLogReader: @unchecked Sendable {
         var accessError: String?
 
         // Find the most recent `Runner_*.log` that represents a `run` session (skip `configure`-only logs)
-        for logURL in runnerLogs.prefix(6) {
+        logSearchLoop: for logURL in runnerLogs.prefix(6) {
             switch readBoundedTail(of: logURL, maxBytes: maxTailBytes) {
             case .success(let content):
                 if Self.isConfigureOnlyLog(content) {
-                    continue
+                    continue logSearchLoop
                 }
                 selectedLogURL = logURL
                 selectedLogText = content
-                break
+                break logSearchLoop
             case .failure(let error):
                 if accessError == nil {
                     accessError = "Unable to read \(logURL.lastPathComponent): \(error.localizedDescription)"
@@ -292,9 +292,14 @@ public final class RunnerLogReader: @unchecked Sendable {
     // MARK: - Log Format Parsing
 
     public static func isConfigureOnlyLog(_ text: String) -> Bool {
-        let hasConfigureCommand = text.contains("Adding Command: configure") || text.contains("Command 'configure': 'True'")
-        let hasRunCommand = text.contains("Adding Command: run") || text.contains("Listening for Jobs") || text.contains("Running job:")
-        return hasConfigureCommand && !hasRunCommand
+        let hasSetupCommand = text.contains("Adding Command: configure") ||
+            text.contains("Command 'configure': 'True'") ||
+            text.contains("Adding Command: remove") ||
+            text.contains("Command 'remove': 'True'")
+        let hasRunCommand = text.contains("Adding Command: run") ||
+            text.contains("Listening for Jobs") ||
+            text.contains("Running job:")
+        return hasSetupCommand && !hasRunCommand
     }
 
     public static func parseRunnerDiagnosticLog(

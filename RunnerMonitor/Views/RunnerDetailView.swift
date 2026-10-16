@@ -202,7 +202,7 @@ public struct RunnerDetailView: View {
             }
             .padding(14)
         }
-        .frame(maxHeight: 460)
+        .frame(height: 400)
     }
 
     @ViewBuilder

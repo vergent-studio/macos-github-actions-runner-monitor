@@ -60,64 +60,14 @@ public struct MenuBarView: View {
 
             Divider()
 
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    // Runners Section
-                    if appState.runners.isEmpty {
-                        emptyStateView
-                    } else {
-                        VStack(spacing: 8) {
-                            ForEach(appState.runners) { runner in
-                                RunnerRow(runner: runner) {
-                                    appState.selectRunner(runner)
-                                }
-                            }
-                        }
-                    }
-
-                    // Recent Activity Section
-                    Divider()
-                        .padding(.vertical, 2)
-
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Recent activity")
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(.secondary)
-
-                        if appState.recentEvents.isEmpty {
-                            Text("No lifecycle transitions observed during this session yet.")
-                                .font(.caption)
-                                .foregroundStyle(.tertiary)
-                                .padding(.vertical, 4)
-                        } else {
-                            ForEach(appState.recentEvents.prefix(6)) { event in
-                                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                                    Text(Self.timeFormatter.string(from: event.timestamp))
-                                        .font(.caption2.monospacedDigit())
-                                        .foregroundStyle(.secondary)
-
-                                    Image(systemName: event.kind.symbolName)
-                                        .font(.caption2)
-                                        .foregroundStyle(.secondary)
-
-                                    Text(event.runnerName)
-                                        .font(.caption.weight(.medium))
-                                        .lineLimit(1)
-
-                                    Text(event.summary)
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                        .lineLimit(1)
-
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
+            if appState.runners.count > 5 {
+                ScrollView {
+                    dashboardBodyContent
                 }
-                .padding(14)
+                .frame(height: 380)
+            } else {
+                dashboardBodyContent
             }
-            .frame(maxHeight: 440)
 
             Divider()
 
@@ -155,10 +105,67 @@ public struct MenuBarView: View {
         }
     }
 
+    private var dashboardBodyContent: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Runners Section
+            if appState.runners.isEmpty {
+                emptyStateView
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(appState.runners) { runner in
+                        RunnerRow(runner: runner) {
+                            appState.selectRunner(runner)
+                        }
+                    }
+                }
+            }
+
+            // Recent Activity Section
+            Divider()
+                .padding(.vertical, 2)
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Recent activity")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                if appState.recentEvents.isEmpty {
+                    Text("No lifecycle transitions observed during this session yet.")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                        .padding(.vertical, 4)
+                } else {
+                    ForEach(appState.recentEvents.prefix(6)) { event in
+                        HStack(alignment: .firstTextBaseline, spacing: 8) {
+                            Text(Self.timeFormatter.string(from: event.timestamp))
+                                .font(.caption2.monospacedDigit())
+                                .foregroundStyle(.secondary)
+
+                            Image(systemName: event.kind.symbolName)
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+
+                            Text(event.runnerName)
+                                .font(.caption.weight(.medium))
+                                .lineLimit(1)
+
+                            Text(event.summary)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(1)
+
+                            Spacer()
+                        }
+                    }
+                }
+            }
+        }
+        .padding(14)
+    }
+
     private var emptyStateView: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Label("No runners discovered", systemImage: "Direct")
-                .symbolVariant(.slash)
+            Label("No runners discovered", systemImage: "externaldrive.badge.questionmark")
                 .font(.subheadline.weight(.medium))
             Text("Checked discovery root: \(appState.discoveryRootPath)")
                 .font(.caption)
