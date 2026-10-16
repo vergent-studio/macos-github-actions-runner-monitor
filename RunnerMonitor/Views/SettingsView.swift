@@ -28,7 +28,7 @@ public struct SettingsView: View {
                 }
                 .padding(12)
             }
-            .frame(maxHeight: 460)
+            .frame(height: 420)
         }
         .onAppear {
             appState.refreshSetupPlan()

@@ -996,6 +996,60 @@ struct RunnerMonitorTests {
         #expect(logSnap.lastCompletedJob?.jobName == "Build and Test")
     }
 
+    @Test("Selects newest active run session log when older exited run logs exist")
+    func selectsNewestRunSessionLogWhenOlderExitedLogExists() throws {
+        let temp = try makeTempDirectory()
+        defer { try? FileManager.default.removeItem(at: temp) }
+        let launchAgents = temp.appendingPathComponent("LaunchAgents")
+        let logs = temp.appendingPathComponent("Logs")
+        let root = temp.appendingPathComponent("actions-runners")
+
+        let olderExitedRunLog = """
+        [2026-10-15 17:17:40Z INFO CommandLineParser] Adding Command: run
+        [2026-10-15 17:17:42Z INFO Terminal] WRITE LINE: 2026-10-15 17:17:42Z: Listening for Jobs
+        [2026-10-15 22:48:27Z INFO Listener] Runner execution been cancelled.
+        [2026-10-15 22:48:27Z INFO Terminal] WRITE LINE: Exiting...
+        """
+        let removeLog = """
+        [2026-10-15 23:14:24Z INFO CommandLineParser] Adding Command: remove
+        [2026-10-15 23:14:24Z INFO ConfigurationManager] UnconfigureAsync
+        """
+        let newerActiveRunLog = """
+        [2026-10-16 06:12:59Z INFO CommandLineParser] Adding Command: run
+        [2026-10-16 06:13:02Z INFO Terminal] WRITE LINE: 2026-10-16 06:13:02Z: Listening for Jobs
+        """
+
+        let fixture = try createRunnerFixture(
+            in: root,
+            launchAgentsURL: launchAgents,
+            logsRootURL: logs,
+            diagLogs: [
+                ("Runner_20261015-171740-utc.log", olderExitedRunLog),
+                ("Runner_20261015-231424-utc.log", removeLog),
+                ("Runner_20261016-061259-utc.log", newerActiveRunLog)
+            ]
+        )
+
+        let candidate = try #require(RunnerDiscovery(launchAgentsDirectoryURL: launchAgents).discoverRunners(in: root).first)
+        let logSnap = RunnerLogReader().readSnapshot(for: candidate)
+        let launchdSnap = LaunchdServiceSnapshot(
+            serviceName: fixture.serviceName,
+            isLoaded: true,
+            pid: 3840,
+            runsCount: 1,
+            stateDescription: "active"
+        )
+        let resolved = RunnerStatusResolver().resolve(
+            candidate: candidate,
+            launchdSnapshot: launchdSnap,
+            logSnapshot: logSnap
+        ).runner
+
+        #expect(logSnap.sessionLogURL?.lastPathComponent == "Runner_20261016-061259-utc.log")
+        #expect(logSnap.sessionExited == false)
+        #expect(resolved.status == .idle)
+    }
+
     @Test("Read-only verification of live ~/actions-runners installations if present")
     func readOnlyLiveRunnersVerification() throws {
         let liveRoot = FileManager.default.homeDirectoryForCurrentUser
