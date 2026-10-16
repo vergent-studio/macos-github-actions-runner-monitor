@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* RunnerMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* RunnerMonitorApp.swift */; };
+		A10000020000000000000001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000020000000000000001 /* AppState.swift */; };
+		A10000030000000000000001 /* RunnerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000030000000000000001 /* RunnerStatus.swift */; };
+		A10000040000000000000001 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000040000000000000001 /* Runner.swift */; };
+		A10000050000000000000001 /* RunnerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000050000000000000001 /* RunnerEvent.swift */; };
+		A10000060000000000000001 /* SecretRedactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000060000000000000001 /* SecretRedactor.swift */; };
+		A10000070000000000000001 /* RunnerDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000070000000000000001 /* RunnerDiscovery.swift */; };
+		A10000080000000000000001 /* LaunchdStatusReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000080000000000000001 /* LaunchdStatusReader.swift */; };
+		A10000090000000000000001 /* RunnerLogReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000090000000000000001 /* RunnerLogReader.swift */; };
+		A100000A0000000000000001 /* RunnerStatusResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000A0000000000000001 /* RunnerStatusResolver.swift */; };
+		A100000B0000000000000001 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000B0000000000000001 /* NotificationManager.swift */; };
+		A100000C0000000000000001 /* RunnerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000C0000000000000001 /* RunnerRow.swift */; };
+		A100000D0000000000000001 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000D0000000000000001 /* MenuBarView.swift */; };
+		A100000E0000000000000001 /* RunnerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000E0000000000000001 /* RunnerDetailView.swift */; };
+		A100000F0000000000000001 /* LogViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000F0000000000000001 /* LogViewer.swift */; };
+		A10000100000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000100000000000000001 /* SettingsView.swift */; };
+		A10000110000000000000001 /* ServiceSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000110000000000000001 /* ServiceSetupManager.swift */; };
+		A10000120000000000000001 /* RunnerMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000120000000000000001 /* RunnerMonitorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A30000010000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90000010000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A60000010000000000000001;
+			remoteInfo = RunnerMonitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20000010000000000000001 /* RunnerMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerMonitorApp.swift; sourceTree = "<group>"; };
+		A20000020000000000000001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A20000030000000000000001 /* RunnerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerStatus.swift; sourceTree = "<group>"; };
+		A20000040000000000000001 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		A20000050000000000000001 /* RunnerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerEvent.swift; sourceTree = "<group>"; };
+		A20000060000000000000001 /* SecretRedactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretRedactor.swift; sourceTree = "<group>"; };
+		A20000070000000000000001 /* RunnerDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerDiscovery.swift; sourceTree = "<group>"; };
+		A20000080000000000000001 /* LaunchdStatusReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdStatusReader.swift; sourceTree = "<group>"; };
+		A20000090000000000000001 /* RunnerLogReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerLogReader.swift; sourceTree = "<group>"; };
+		A200000A0000000000000001 /* RunnerStatusResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerStatusResolver.swift; sourceTree = "<group>"; };
+		A200000B0000000000000001 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A200000C0000000000000001 /* RunnerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerRow.swift; sourceTree = "<group>"; };
+		A200000D0000000000000001 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		A200000E0000000000000001 /* RunnerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerDetailView.swift; sourceTree = "<group>"; };
+		A200000F0000000000000001 /* LogViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewer.swift; sourceTree = "<group>"; };
+		A20000100000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A20000110000000000000001 /* ServiceSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupManager.swift; sourceTree = "<group>"; };
+		A20000120000000000000001 /* RunnerMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerMonitorTests.swift; sourceTree = "<group>"; };
+		A20000130000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000140000000000000001 /* Runner Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Runner Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000150000000000000001 /* RunnerMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40000020000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A50000020000000000000001 /* RunnerMonitor */,
+				A50000090000000000000001 /* RunnerMonitorTests */,
+				A500000A0000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A50000020000000000000001 /* RunnerMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				A50000030000000000000001 /* App */,
+				A50000040000000000000001 /* Models */,
+				A50000050000000000000001 /* Services */,
+				A50000060000000000000001 /* Views */,
+				A50000070000000000000001 /* Setup */,
+				A50000080000000000000001 /* Resources */,
+			);
+			path = RunnerMonitor;
+			sourceTree = "<group>";
+		};
+		A50000030000000000000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000001 /* RunnerMonitorApp.swift */,
+				A20000020000000000000001 /* AppState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A50000040000000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000030000000000000001 /* RunnerStatus.swift */,
+				A20000040000000000000001 /* Runner.swift */,
+				A20000050000000000000001 /* RunnerEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A50000050000000000000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000060000000000000001 /* SecretRedactor.swift */,
+				A20000070000000000000001 /* RunnerDiscovery.swift */,
+				A20000080000000000000001 /* LaunchdStatusReader.swift */,
+				A20000090000000000000001 /* RunnerLogReader.swift */,
+				A200000A0000000000000001 /* RunnerStatusResolver.swift */,
+				A200000B0000000000000001 /* NotificationManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A50000060000000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A200000C0000000000000001 /* RunnerRow.swift */,
+				A200000D0000000000000001 /* MenuBarView.swift */,
+				A200000E0000000000000001 /* RunnerDetailView.swift */,
+				A200000F0000000000000001 /* LogViewer.swift */,
+				A20000100000000000000001 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A50000070000000000000001 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				A20000110000000000000001 /* ServiceSetupManager.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		A50000080000000000000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000130000000000000001 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A50000090000000000000001 /* RunnerMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A20000120000000000000001 /* RunnerMonitorTests.swift */,
+			);
+			path = RunnerMonitorTests;
+			sourceTree = "<group>";
+		};
+		A500000A0000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000140000000000000001 /* Runner Monitor.app */,
+				A20000150000000000000001 /* RunnerMonitorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60000010000000000000001 /* RunnerMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000020000000000000001 /* Build configuration list for PBXNativeTarget "RunnerMonitor" */;
+			buildPhases = (
+				A70000010000000000000001 /* Sources */,
+				A40000010000000000000001 /* Frameworks */,
+				A70000020000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RunnerMonitor;
+			productName = "Runner Monitor";
+			productReference = A20000140000000000000001 /* Runner Monitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A60000020000000000000001 /* RunnerMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000030000000000000001 /* Build configuration list for PBXNativeTarget "RunnerMonitorTests" */;
+			buildPhases = (
+				A70000030000000000000001 /* Sources */,
+				A40000020000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A60000030000000000000001 /* PBXTargetDependency */,
+			);
+			name = RunnerMonitorTests;
+			productName = RunnerMonitorTests;
+			productReference = A20000150000000000000001 /* RunnerMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A60000010000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A60000020000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A60000010000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A80000010000000000000001 /* Build configuration list for PBXProject "RunnerMonitor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A50000010000000000000001;
+			productRefGroup = A500000A0000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60000010000000000000001 /* RunnerMonitor */,
+				A60000020000000000000001 /* RunnerMonitorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A70000020000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000001 /* RunnerMonitorApp.swift in Sources */,
+				A10000020000000000000001 /* AppState.swift in Sources */,
+				A10000030000000000000001 /* RunnerStatus.swift in Sources */,
+				A10000040000000000000001 /* Runner.swift in Sources */,
+				A10000050000000000000001 /* RunnerEvent.swift in Sources */,
+				A10000060000000000000001 /* SecretRedactor.swift in Sources */,
+				A10000070000000000000001 /* RunnerDiscovery.swift in Sources */,
+				A10000080000000000000001 /* LaunchdStatusReader.swift in Sources */,
+				A10000090000000000000001 /* RunnerLogReader.swift in Sources */,
+				A100000A0000000000000001 /* RunnerStatusResolver.swift in Sources */,
+				A100000B0000000000000001 /* NotificationManager.swift in Sources */,
+				A100000C0000000000000001 /* RunnerRow.swift in Sources */,
+				A100000D0000000000000001 /* MenuBarView.swift in Sources */,
+				A100000E0000000000000001 /* RunnerDetailView.swift in Sources */,
+				A100000F0000000000000001 /* LogViewer.swift in Sources */,
+				A10000100000000000000001 /* SettingsView.swift in Sources */,
+				A10000110000000000000001 /* ServiceSetupManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70000030000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000120000000000000001 /* RunnerMonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A60000030000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A60000010000000000000001 /* RunnerMonitor */;
+			targetProxy = A30000010000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AA0000020000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AA0000030000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = RunnerMonitor/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.vergent.runnermonitor;
+				PRODUCT_MODULE_NAME = RunnerMonitor;
+				PRODUCT_NAME = "Runner Monitor";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AA0000040000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = RunnerMonitor/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.vergent.runnermonitor;
+				PRODUCT_MODULE_NAME = RunnerMonitor;
+				PRODUCT_NAME = "Runner Monitor";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		AA0000050000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.vergent.runnermonitor.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner Monitor";
+			};
+			name = Debug;
+		};
+		AA0000060000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.vergent.runnermonitor.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner Monitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80000010000000000000001 /* Build configuration list for PBXProject "RunnerMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000010000000000000001 /* Debug */,
+				AA0000020000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000020000000000000001 /* Build configuration list for PBXNativeTarget "RunnerMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000030000000000000001 /* Debug */,
+				AA0000040000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000030000000000000001 /* Build configuration list for PBXNativeTarget "RunnerMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000050000000000000001 /* Debug */,
+				AA0000060000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A90000010000000000000001 /* Project object */;
+}
